@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Encryption</title>
+</head>
+<body>
+	<h3>Original Obeject</h3>
+	<code id="original">
+		
+	</code>
+	<h3>Encrypted Object</h3>
+	<code id="encrypt">
+		
+	</code>
+	<h3>Decrypted Object</h3>
+	<code id="decypt">
+		
+	</code>
+</body>
+<script type="text/javascript" src="src/ObjectBase64.js"></script>
+<script type="text/javascript">
+	var originalElement = document.getElementById('original');
+	var encryptElement = document.getElementById('encrypt');
+	var descyptElement = document.getElementById('decypt');
+
+	var obj = {
+	    "glossary": {
+	        "title": "example glossary",
+			"GlossDiv": {
+	            "title": "S",
+				"GlossList": {
+	                "GlossEntry": {
+	                    "ID": "SGML",
+						"SortAs": "SGML",
+						"GlossTerm": "Standard Generalized Markup Language",
+						"Acronym": "SGML",
+						"Abbrev": "ISO 8879:1986",
+						"GlossDef": {
+	                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+							"GlossSeeAlso": ["GML", "XML"]
+	                    },
+						"GlossSee": "markup"
+	                }
+	            }
+	        }
+	    }
+	}
+	var salt = "some string here";
+
+	originalElement.innerHTML = JSON.stringify(obj);
+	
+	var encrypted = ObjEncrypt(obj, salt);
+	encryptElement.innerHTML = encrypted;
+	
+	var decrypted = ObjDecrypt(encrypted, salt);
+	descyptElement.innerHTML = JSON.stringify(decrypted);
+</script>	
+</html>
