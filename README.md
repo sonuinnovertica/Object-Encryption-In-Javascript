@@ -13,9 +13,9 @@ It's pretty simple.
 # Encrypt Object
 After adding the required file all you need to do is call the encryption function, like below:
 
-<pre>var encryptedObj = ObjEncrypt(Object, Salt)</pre>
+<pre>var encryptedObj = ObjEncrypt(Object)</pre>
 
-# Dencrypt Object
+# Decrypt Object
 After adding the required file all you need to do is call the decryption function, like below:
 
-<pre>var decryptedObj = ObjDecrypt(encryptedObj, Salt)</pre>
+<pre>var decryptedObj = ObjDecrypt(encryptedObj)</pre>
